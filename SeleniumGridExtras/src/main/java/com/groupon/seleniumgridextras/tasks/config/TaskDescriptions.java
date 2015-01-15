@@ -7,6 +7,7 @@ public class TaskDescriptions {
         public static final String DOWNLOAD_CHROMEDRIVER = "/download_chromedriver";
         public static final String DOWNLOAD_IEDRIVER = "/download_iedriver";
         public static final String DOWNLOAD_WEBDRIVER = "/download_webdriver";
+        public static final String DOWNLOAD_APPIUM = "/download_appium";
         public static final String DIR = "/dir";
         public static final String CONFIG = "/config";
         public static final String GET_FILE = "/get_file";
@@ -52,6 +53,9 @@ public class TaskDescriptions {
         public static final
         String DOWNLOAD_WEBDRIVER =
                 "Downloads a version of WebDriver jar to local machine";
+        public static final
+        String DOWNLOAD_APPIUM =
+                "Downloads a version of Appium to local machine";
         public static final
         String DIR =
                 "Gives accesses to a shared directory, user has access to put files into it and get files from it. Directory deleted on restart.";
@@ -146,6 +150,7 @@ public class TaskDescriptions {
             public static final String DOWNLOAD_CHROMEDRIVER = "Download Chrome-Driver";
             public static final String DOWNLOAD_IEDRIVER = "Download IE-Driver";
             public static final String DOWNLOAD_WEBDRIVER = "Download WebDriver";
+            public static final String DOWNLOAD_APPIUM = "Download Appium";
             public static final String DIR = "List Shared Dir";
             public static final String CONFIG = "Get Config";
             public static final String GET_FILE = "Get File";

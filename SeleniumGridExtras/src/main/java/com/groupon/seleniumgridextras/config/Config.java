@@ -4,7 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.gson.internal.LinkedTreeMap;
-
+import com.groupon.seleniumgridextras.config.driver.Appium;
 import com.groupon.seleniumgridextras.config.driver.ChromeDriver;
 import com.groupon.seleniumgridextras.config.driver.DriverInfo;
 import com.groupon.seleniumgridextras.config.driver.IEDriver;
@@ -31,6 +31,7 @@ public class Config {
   public static final String WEBDRIVER = "webdriver";
   public static final String IEDRIVER = "iedriver";
   public static final String CHROME_DRIVER = "chromedriver";
+  public static final String APPIUM = "appium";
   public static final String SHARED_DIR = "expose_directory";
 
   public static final String AUTO_START_NODE = "auto_start_node";
@@ -321,6 +322,23 @@ public class Config {
     }
   }
 
+
+  public Appium getAppium() {
+    try {
+      return (Appium) getConfigMap().get(APPIUM);
+    } catch (ClassCastException e) {
+      LinkedTreeMap
+        stringMapFromGoogleWhoCantUseHashMapOnNestedObjects =
+        (LinkedTreeMap) getConfigMap().get(APPIUM);
+      Appium appium = new Appium();
+
+      appium.putAll(stringMapFromGoogleWhoCantUseHashMapOnNestedObjects);
+
+      getConfigMap().put(APPIUM, appium);
+
+      return appium;
+    }
+  }
 
   public void writeToDisk(String file) {
     try {

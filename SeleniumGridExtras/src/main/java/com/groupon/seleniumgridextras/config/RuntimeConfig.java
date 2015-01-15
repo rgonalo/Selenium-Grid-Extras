@@ -72,7 +72,8 @@ public class RuntimeConfig {
     if (releaseManager == null) {
       releaseManager =
           loadWebDriverReleaseManager("http://selenium-release.storage.googleapis.com/",
-                                      "http://chromedriver.storage.googleapis.com/LATEST_RELEASE");
+                                      "http://chromedriver.storage.googleapis.com/LATEST_RELEASE",
+                                      "https://bitbucket.org/appium/appium.app/downloads");
     }
 
     return releaseManager;
@@ -80,7 +81,8 @@ public class RuntimeConfig {
 
 
   private static WebDriverReleaseManager loadWebDriverReleaseManager(String webDriverAndIEDriverURL,
-                                                                     String chromeDriverUrl) {
+                                                                     String chromeDriverUrl,
+                                                                     String appiumUrl) {
     try {
       return new WebDriverReleaseManager(new URL(webDriverAndIEDriverURL),
                                          new URL(chromeDriverUrl));

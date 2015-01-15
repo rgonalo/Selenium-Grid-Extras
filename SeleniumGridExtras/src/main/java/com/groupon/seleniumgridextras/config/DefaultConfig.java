@@ -262,6 +262,7 @@ public class DefaultConfig {
         config.addActivatedModules(DownloadWebdriver.class.getCanonicalName());
         config.addActivatedModules(DownloadIEDriver.class.getCanonicalName());
         config.addActivatedModules(DownloadChromeDriver.class.getCanonicalName());
+        config.addActivatedModules(DownloadAppium.class.getCanonicalName());
         config.addActivatedModules(SessionHistory.class.getCanonicalName());
     }
 
